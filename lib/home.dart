@@ -11,16 +11,17 @@ class Home extends StatefulWidget {
 
 int selected = 0;
 List listw = [const Page1(), const Page2()];
+String _title = "ListView";
 
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
+        title: Center(
             child: Text(
-          "ListView",
-          style: TextStyle(fontWeight: FontWeight.bold),
+          _title,
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         )),
         backgroundColor: Colors.red,
       ),
@@ -29,6 +30,11 @@ class _HomeState extends State<Home> {
           currentIndex: selected,
           onTap: (value) {
             setState(() {
+              if (value == 0) {
+                _title = "ListView";
+              } else {
+                _title = "GridView";
+              }
               selected = value;
             });
           },

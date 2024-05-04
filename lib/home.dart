@@ -21,7 +21,7 @@ class _HomeState extends State<Home> {
         title: Center(
             child: Text(
           _title,
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+          style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         )),
         backgroundColor: Colors.red,
       ),
